@@ -462,6 +462,53 @@ a.snapchat:hover{
   transform: translate(-50%, -50%);
 }
 
+
+.link-style{
+    color: #fff;
+    text-decoration: none;
+}
+
+.link-style:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
+.about-thumb-wrap.after-shape{
+    margin-right: 30px;
+}
+
+.about-thumb-wrap.after-shape::after{
+    content: "";
+    position: absolute;
+    right: -30px;
+    width: 154px;
+    height: 80%;
+    top: 50%;
+    border-radius: 10px;
+    background:#fdc800 ;
+    z-index: -1;
+    transform: translateY(-50%);
+}
+
+.ProjectDetailText{
+    font-family: 'Monserrat',sans-serif;
+    font-weight: 700;
+    color: #051b35;
+    font-size: 40px;
+}
+
+.Project-Details{
+    margin-left: 35px;
+}
+
+.ProjectDetailDesc{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 600;
+    color: #051b35;
+    font-size: 15px;
+}
+
+
 /* Home Page WElcome Design */
 
 .intro-area--top{

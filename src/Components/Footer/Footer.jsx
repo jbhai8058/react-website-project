@@ -59,8 +59,8 @@ const Footer = () => {
                 </Row>
             </Container>
             <Container fluid={true} className='text-center copyrightSection'>
-                <a className='copyrightLink' href="#">&copy; Copyright 2022 by JRS Learning, All Rights Reserved</a>
-            </Container>
+                <a className='copyrightLink' href="#">&copy; Copyright 2022 by {/* digital softs */}, All Rights Reserved</a>
+            </Container> 
         </Fragment>
     )
 }
