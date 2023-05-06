@@ -40,8 +40,8 @@ const TopNavigation = (props) => {
             <title>{props.title}</title>
             <Navbar collapseOnSelect fixed='top' expand="lg" variant={navVarient} className={navBarBack}>
                 <Container>
-                    <Navbar.Brand className={navBarTitle} >EASY STANDING</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <NavLink to='/'><Navbar.Brand className={navBarTitle} >EASY STANDING</Navbar.Brand></NavLink>
+                   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                         </Nav>
