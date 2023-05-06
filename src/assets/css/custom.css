@@ -508,6 +508,60 @@ a.snapchat:hover{
     font-size: 15px;
 }
 
+.CourseDetailText{
+    font-family: 'Monserrat',sans-serif;
+    font-weight: 700;
+    color: #051b35;
+    font-size: 35px;
+}
+
+.CourseDetailImg{
+    width: 100%;
+}
+
+.CourseallDescription{
+    font-family: 'Monserrat',sans-serif;
+    font-weight: 700;
+    color: #051b35;
+    font-size: 15px;
+}
+
+.widget_features{
+    border: 1px solid #cbd6e2;
+}
+
+.widget_features ul{
+    padding: 0 25px 20px;
+}
+
+.widget_features ul li{
+    color: #051b35;
+    font-size: 16px;
+    margin-bottom: 9px;
+    list-style: none;
+}
+
+.widget_features ul li span{
+    font-family: 'Monserrat',sans-serif;
+    font-weight: 700;
+    color: #051b35;
+   margin-right: 5px;
+}
+
+.widget_features .price-wrap{
+   background: #f0f4f9;
+   padding: 34px 23px 40px;
+}
+
+.widget_title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Monserrat',sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    position: relative;
+}
+
 
 /* Home Page WElcome Design */
 

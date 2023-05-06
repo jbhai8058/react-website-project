@@ -15,6 +15,7 @@ import RefundPage from '../../Pages/RefundPage/RefundPage';
 import TermPage from '../../Pages/TermPage/TermPage';
 import PrivacyPage from '../../Pages/PrivacyPage/PrivacyPage';
 import ProjectDetailPage from '../../Pages/ProjectDetailPage/ProjectDetailPage';
+import CourseDetailPage from '../../Pages/CourseDetailPage/CourseDetailPage';
 
 const AppRouter = () => {
     return (
@@ -31,6 +32,7 @@ const AppRouter = () => {
                     <Route  path='/terms' element={<TermPage />} />
                     <Route  path='/privacy' element={<PrivacyPage />} />
                     <Route  path='/projectDetails' element={<ProjectDetailPage />} />
+                    <Route  path='/coursedetail' element={<CourseDetailPage />} />
                 </Routes>
             </Fragment>
         </Router>

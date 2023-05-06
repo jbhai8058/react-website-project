@@ -1,6 +1,7 @@
 import React from 'react'
 import { Fragment } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Course = () => {
     return (
@@ -19,7 +20,7 @@ const Course = () => {
                             <Col lg={6} md={6} sm={12}>
                                 <h5 className="text-justify serviceName">Laravel 8  </h5>
                                 <p className="text-justify serviceDescription">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a className="courseViewMore float-left" >View Details</a>
+                                <Link className="courseViewMore float-left" to='/coursedetail' >View Details</Link>
                             </Col>
                         </Row>
                     </Col>
@@ -38,7 +39,7 @@ const Course = () => {
                             <Col lg={6} md={6} sm={12}>
                                 <h5 className="text-justify serviceName">Laravel 8  </h5>
                                 <p className="text-justify serviceDescription">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a className="courseViewMore float-left" href="#" >View Details</a>
+                                <Link className="courseViewMore float-left" to='/coursedetail' >View Details</Link>
                             </Col>
                         </Row>
                     </Col>
@@ -55,7 +56,7 @@ const Course = () => {
                             <Col lg={6} md={6} sm={12}>
                                 <h5 className="text-justify serviceName">Laravel 8  </h5>
                                 <p className="text-justify serviceDescription">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a className="courseViewMore float-left" >View Details</a>
+                                <Link className="courseViewMore float-left" to='/coursedetail' >View Details</Link>
                             </Col>
                         </Row>
                     </Col>
@@ -74,7 +75,7 @@ const Course = () => {
                             <Col lg={6} md={6} sm={12}>
                                 <h5 className="text-justify serviceName">Laravel 8  </h5>
                                 <p className="text-justify serviceDescription">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a className="courseViewMore float-left" href="#" >View Details</a>
+                                <Link className="courseViewMore float-left" to='/coursedetail' >View Details</Link>
                             </Col>
                         </Row>
                     </Col>
