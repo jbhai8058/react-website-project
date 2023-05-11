@@ -9,8 +9,8 @@ import AppUrl from '../../Rest Api/AppUrl';
 
 const TopBanner = () => {
 
-  const [title, setTitle] = useState('...');
-  const [subtitle, setSubtitle] = useState('...');
+  const [title, setTitle] = useState('');
+  const [subtitle, setSubtitle] = useState('');
 
   useEffect(() => {
     RestClient.GetRequest(AppUrl.HomeTopTitle).then((result) => {
