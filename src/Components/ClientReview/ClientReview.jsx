@@ -63,7 +63,6 @@ const ClientReview = () => {
 
 
     const MyView = Data ? (Data.map(myItem => (
-        console.log(myItem),
         <div key={myItem.id}>
             <Row className='text-center justify-content-center'>
                 <Col lg={6} md={6} sm={12}>
