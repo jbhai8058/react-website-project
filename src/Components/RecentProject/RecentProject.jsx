@@ -18,8 +18,8 @@ const RecentProject = () => {
         });
     }, []);
 
-    const MyView = Data.map(myItem => (
-        <Col lg={4} md={6} sm={12}  key={myItem.id}>
+    const MyView = Data ? (Data.map(myItem => (
+        <Col lg={4} md={6} sm={12} key={myItem.id}>
             <Card className='ProjectCard'>
                 <Card.Img variant="top" src={myItem.img_one} />
                 <Card.Body>
@@ -31,7 +31,8 @@ const RecentProject = () => {
                 </Card.Body>
             </Card>
         </Col>
-    ));
+    ))
+    ) : null;
 
     return (
         <Fragment>

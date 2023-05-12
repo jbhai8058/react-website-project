@@ -16,7 +16,7 @@ const Service = () => {
         });
     }, []);
 
-    const MyView = Data.map(myItem => (
+    const MyView = Data ? (Data.map(myItem => (
         <Col lg={4} md={6} sm={12} key={myItem.id}>
             <div className="serviceCard text-center">
                 <img className="ecommerceIcon" src={myItem.service_logo} alt={myItem.service_name} />
@@ -24,7 +24,8 @@ const Service = () => {
                 <p className="serviceDescription">{myItem.service_description}</p>
             </div>
         </Col>
-    ));
+    ))
+    ) : null;
 
     return (
         <Fragment>

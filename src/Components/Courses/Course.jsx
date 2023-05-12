@@ -12,12 +12,12 @@ const Course = () => {
     useEffect(() => {
         RestClient.GetRequest(AppUrl.CourseHome).then((result) => {
             setData(result);
-        }).catch((error )=> {
+        }).catch((error) => {
             console.log(error);
         })
-    },[])
+    }, [])
 
-    const MyView = Data.map(myItem => (
+    const MyView = Data ? (Data.map(myItem => (
         <Col lg={6} md={12} sm={12} key={myItem.id}>
             <Row>
                 <Col lg={6} md={6} sm={12} className="p-2" >
@@ -33,6 +33,7 @@ const Course = () => {
             </Row>
         </Col>
     ))
+    ) : null;
 
     return (
         <Fragment>
@@ -40,7 +41,7 @@ const Course = () => {
                 <h1 className="serviceMainTitle">MY COURSES</h1>
                 <div className="bottom"></div>
                 <Row>
-                   {MyView}
+                    {MyView}
                 </Row>
 
             </Container>

@@ -4,8 +4,22 @@ import { Col, Container, Row } from 'react-bootstrap'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { useState } from 'react';
+import RestClient from '../../Rest Api/RestClient';
+import AppUrl from '../../Rest Api/AppUrl';
+import { useEffect } from 'react';
 
 const ClientReview = () => {
+
+    const [Data, setData] = useState([]);
+
+    useEffect(() => {
+        RestClient.GetRequest(AppUrl.ClientReview).then((result) => {
+            setData(result);
+        }).catch((error) => {
+            console.log(error);
+        })
+    })
 
     var settings = {
         autoPlay: true,
@@ -47,58 +61,29 @@ const ClientReview = () => {
         ]
     };
 
+
+    const MyView = Data ? (Data.map(myItem => (
+        console.log(myItem),
+        <div key={myItem.id}>
+            <Row className='text-center justify-content-center'>
+                <Col lg={6} md={6} sm={12}>
+                    <img className='circleImg' src={myItem.client_img} alt={myItem.client_title} />
+                    <h2 className='reviewName'>{myItem.client_title}</h2>
+                    <p className='reviewDescription'>{myItem.client_description}</p>
+                </Col>
+            </Row>
+        </div>
+    ))
+    ) : null;
+
+
     return (
         <Fragment>
             <Container fluid={true} className='siderBack text-center'>
                 <h1 className='reviewMainTitle p-3'>TESTIMOIAL</h1>
                 <div className='reviewbottom'></div>
                 <Slider {...settings}>
-                    <div>
-                        <Row className='text-center justify-content-center'>
-                            <Col lg={6} md={6} sm={12}>
-                                <img className='circleImg' src="https://img.freepik.com/free-photo/emotions-people-concept-headshot-serious-looking-handsome-man-with-beard-looking-confident-determined_1258-26730.jpg?w=900&t=st=1682614581~exp=1682615181~hmac=c88b5e1925061e3e67635d6ef08086eb47515b01d80b595738b9ba282f54295b" alt="" />
-                                <h2 className='reviewName'>Lorem ipsum</h2>
-                                <p className='reviewDescription'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur corporis quis autem aliquid dolorum perspiciatis cumque exercitationem, porro, delectus error aut assumenda. Deleniti aperiam cupiditate illum itaque error quidem enim.</p>
-                            </Col>
-                        </Row>
-                    </div>
-
-
-                    <div>
-                        <Row className='text-center justify-content-center'>
-                            <Col lg={6} md={6} sm={12}>
-                                <img className='circleImg' src="https://img.freepik.com/free-photo/emotions-people-concept-headshot-serious-looking-handsome-man-with-beard-looking-confident-determined_1258-26730.jpg?w=900&t=st=1682614581~exp=1682615181~hmac=c88b5e1925061e3e67635d6ef08086eb47515b01d80b595738b9ba282f54295b" alt="" />
-                                <h2 className='reviewName'>Lorem ipsum</h2>
-                                <p className='reviewDescription'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur corporis quis autem aliquid dolorum perspiciatis cumque exercitationem, porro, delectus error aut assumenda. Deleniti aperiam cupiditate illum itaque error quidem enim.</p>
-                            </Col>
-                        </Row>
-                    </div>
-
-
-
-                    <div>
-                        <Row className='text-center justify-content-center'>
-                            <Col lg={6} md={6} sm={12}>
-                                <img className='circleImg' src="https://img.freepik.com/free-photo/emotions-people-concept-headshot-serious-looking-handsome-man-with-beard-looking-confident-determined_1258-26730.jpg?w=900&t=st=1682614581~exp=1682615181~hmac=c88b5e1925061e3e67635d6ef08086eb47515b01d80b595738b9ba282f54295b" alt="" />
-                                <h2 className='reviewName'>Lorem ipsum</h2>
-                                <p className='reviewDescription'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur corporis quis autem aliquid dolorum perspiciatis cumque exercitationem, porro, delectus error aut assumenda. Deleniti aperiam cupiditate illum itaque error quidem enim.</p>
-                            </Col>
-                        </Row>
-                    </div>
-
-
-
-                    <div>
-                        <Row className='text-center justify-content-center'>
-                            <Col lg={6} md={6} sm={12}>
-                                <img className='circleImg' src="https://img.freepik.com/free-photo/emotions-people-concept-headshot-serious-looking-handsome-man-with-beard-looking-confident-determined_1258-26730.jpg?w=900&t=st=1682614581~exp=1682615181~hmac=c88b5e1925061e3e67635d6ef08086eb47515b01d80b595738b9ba282f54295b" alt="" />
-                                <h2 className='reviewName'>Lorem ipsum</h2>
-                                <p className='reviewDescription'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur corporis quis autem aliquid dolorum perspiciatis cumque exercitationem, porro, delectus error aut assumenda. Deleniti aperiam cupiditate illum itaque error quidem enim.</p>
-                            </Col>
-                        </Row>
-                    </div>
-
-
+                    {MyView}
                 </Slider>
             </Container>
         </Fragment>
