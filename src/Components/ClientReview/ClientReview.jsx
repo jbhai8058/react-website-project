@@ -19,7 +19,7 @@ const ClientReview = () => {
         }).catch((error) => {
             console.log(error);
         })
-    })
+    },[])
 
     var settings = {
         autoPlay: true,
