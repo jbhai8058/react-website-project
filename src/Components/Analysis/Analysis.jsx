@@ -1,20 +1,21 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
+import AppUrl from '../../Rest Api/AppUrl';
+import RestClient from '../../Rest Api/RestClient';
 
 const Analysis = () => {
 
 
-    const [data, setData] = useState([
-        { Technology: 'PHP', Projects: 100 },
-        { Technology: 'MySqli', Projects: 90 },
-        { Technology: 'Laravel', Projects: 95 },
-        { Technology: 'React', Projects: 85 },
-        { Technology: 'Opencart', Projects: 80 },
-        { Technology: 'Vue Js', Projects: 70 },
-        { Technology: 'Django', Projects: 60 },
-        { Technology: 'JavaScript', Projects: 100 }
-    ]);
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        RestClient.GetRequest(AppUrl.ChartData).then(result => {
+          setData(result);
+        }).catch((error) => {
+            console.log(error);
+        })
+      }, []);
 
 
     const blue = "#051b35";
