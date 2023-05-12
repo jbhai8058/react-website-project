@@ -12,11 +12,11 @@ class AppUrl {
     static ProjectHome      = this.BaseURL + '/projecthome'   ;
     static Services         = this.BaseURL + '/services'      ;
 
-    static Information      = this.BaseURL + '/coursehome'    ;
-    static FooterData       = this.BaseURL + '/courseall'     ;
+    static CourseHome       = this.BaseURL + '/coursehome'    ;
+    static CourseAll        = this.BaseURL + '/courseall'     ;
     static CourseDetails    = this.BaseURL + '/coursedetails' ;
-    static CourseAll        = this.BaseURL + '/information'   ;
-    static CourseHome       = this.BaseURL + '/footerdata'    ;
+    static Information      = this.BaseURL + '/information'   ;
+    static FooterData       = this.BaseURL + '/footerdata'    ;
 
     static ContactSend      = this.BaseURL + '/contactsend'   ;
     static ClientReview     = this.BaseURL + '/clientreview'  ;

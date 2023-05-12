@@ -1,84 +1,46 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Fragment } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import RestClient from '../../Rest Api/RestClient'
+import AppUrl from '../../Rest Api/AppUrl'
 
 const Course = () => {
+
+    const [Data, setData] = useState([]);
+
+    useEffect(() => {
+        RestClient.GetRequest(AppUrl.CourseHome).then((result) => {
+            setData(result);
+        }).catch((error )=> {
+            console.log(error);
+        })
+    },[])
+
+    const MyView = Data.map(myItem => (
+        <Col lg={6} md={12} sm={12} key={myItem.id}>
+            <Row>
+                <Col lg={6} md={6} sm={12} className="p-2" >
+                    <img className="courseImg" src={myItem.small_img} alt={myItem.short_title} />
+
+                </Col>
+
+                <Col lg={6} md={6} sm={12}>
+                    <h5 className="text-justify serviceName">{myItem.short_title}</h5>
+                    <p className="text-justify serviceDescription">{myItem.short_description}</p>
+                    <Link className="courseViewMore float-left" to='/coursedetail' >View Details</Link>
+                </Col>
+            </Row>
+        </Col>
+    ))
+
     return (
         <Fragment>
             <Container className="text-center">
                 <h1 className="serviceMainTitle">MY COURSES</h1>
                 <div className="bottom"></div>
                 <Row>
-                    <Col lg={6} md={12} sm={12}>
-                        <Row>
-                            <Col lg={6} md={6} sm={12} className="p-2" >
-                                <img className="courseImg" src="https://image.freepik.com/free-photo/learner-lesson_1098-14155.jpg" />
-
-                            </Col>
-
-                            <Col lg={6} md={6} sm={12}>
-                                <h5 className="text-justify serviceName">Laravel 8  </h5>
-                                <p className="text-justify serviceDescription">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <Link className="courseViewMore float-left" to='/coursedetail' >View Details</Link>
-                            </Col>
-                        </Row>
-                    </Col>
-
-
-
-
-                    <Col lg={6} md={12} sm={12}>
-                        <Row>
-
-                            <Col lg={6} md={6} sm={12} className="p-2">
-                                <img className="courseImg" src="https://image.freepik.com/free-photo/coach-by-whiteboard_1098-12970.jpg" />
-
-                            </Col>
-
-                            <Col lg={6} md={6} sm={12}>
-                                <h5 className="text-justify serviceName">Laravel 8  </h5>
-                                <p className="text-justify serviceDescription">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <Link className="courseViewMore float-left" to='/coursedetail' >View Details</Link>
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-
-                <Row>
-                    <Col lg={6} md={12} sm={12}>
-                        <Row>
-                            <Col lg={6} md={6} sm={12} className="p-2" >
-                                <img className="courseImg" src="https://image.freepik.com/free-photo/shocked-male-student-poses-desktop-home-office-uses-laptop-computer-searching-online-education-course-browses-distance-learning-website_273609-34548.jpg" />
-
-                            </Col>
-
-                            <Col lg={6} md={6} sm={12}>
-                                <h5 className="text-justify serviceName">Laravel 8  </h5>
-                                <p className="text-justify serviceDescription">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <Link className="courseViewMore float-left" to='/coursedetail' >View Details</Link>
-                            </Col>
-                        </Row>
-                    </Col>
-
-
-
-
-                    <Col lg={6} md={12} sm={12}>
-                        <Row>
-
-                            <Col lg={6} md={6} sm={12} className="p-2">
-                                <img className="courseImg" src="https://image.freepik.com/free-photo/training-managers_1098-16067.jpg" />
-
-                            </Col>
-
-                            <Col lg={6} md={6} sm={12}>
-                                <h5 className="text-justify serviceName">Laravel 8  </h5>
-                                <p className="text-justify serviceDescription">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <Link className="courseViewMore float-left" to='/coursedetail' >View Details</Link>
-                            </Col>
-                        </Row>
-                    </Col>
+                   {MyView}
                 </Row>
 
             </Container>
