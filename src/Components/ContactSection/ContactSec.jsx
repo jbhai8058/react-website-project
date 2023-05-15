@@ -1,10 +1,28 @@
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
+import { useEffect } from 'react'
 import { Fragment } from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
+import RestClient from '../../Rest Api/RestClient'
+import AppUrl from '../../Rest Api/AppUrl'
+import { useState } from 'react'
 
 const ContactSec = () => {
+
+    const[address , setaddress]= useState('');
+    const[phone , setphone]= useState('');
+    const[email , setemail]= useState('');
+
+    useEffect(()=>{
+        RestClient.GetRequest(AppUrl.FooterData).then((response)=>{
+            setaddress(response[0]['address']);
+            setphone(response[0]['phone']);
+            setemail(response[0]['email']);
+        })
+    },[])
+
+
     return (
         <Fragment>
             <Container className='mt-5'>
@@ -33,10 +51,9 @@ const ContactSec = () => {
                     </Col>
                     <Col lg={6} md={6} sm={12}>
                         <h1>Disscuss Now</h1>
-                        <p className='serviceDescription'>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />
-                            <FontAwesomeIcon icon={faEnvelope} /> Email : support@gmail.com<br />
-                            <FontAwesomeIcon icon={faPhone} /> Phone : +9240038989<br />
+                        <p className='serviceDescription'>{address}<br />
+                            <FontAwesomeIcon icon={faEnvelope} /> Email : {email}<br />
+                            <FontAwesomeIcon icon={faPhone} /> Phone : {phone}<br />
                         </p>
                     </Col>
                 </Row>
