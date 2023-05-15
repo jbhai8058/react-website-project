@@ -52,7 +52,7 @@ const Footer = () => {
                     </Col>
                     <Col lg={3} md={6} sm={12} className='p-5 text-justify'>
                         <h2 className='footerName'>Policy</h2>
-                        <Link className='footerLink' to='/refund'>Fefund Policy</Link><br />
+                        <Link className='footerLink' to='/refund'>Refund Policy</Link><br />
                         <Link className='footerLink' to='/terms'>Term And Condition</Link><br />
                         <Link className='footerLink' to='/privacy'>Privacy Policy</Link><br />
                     </Col>
