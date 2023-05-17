@@ -22,6 +22,20 @@ const ContactSec = () => {
         })
     },[])
 
+    const ContactSend = () => {
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let message = document.getElementById('message').value;
+
+        let jsonObject = {name:name,email:email,message:message}
+
+        RestClient.PostRequest(AppUrl.ContactSend.JSON.stringify(jsonObject)).then((result=>{
+            alert(result)
+        })).catch((error)=>{
+            console.log(error);
+        })
+    }
+
 
     return (
         <Fragment>
@@ -32,19 +46,19 @@ const ContactSec = () => {
                         <Form>
                             <Form.Group>
                                 <Form.Label>Your Name</Form.Label>
-                                <Form.Control type="text" placeholder="Enter Your Name" />
+                                <Form.Control id='name' type="text" placeholder="Enter Your Name" />
                             </Form.Group> <br />
                             <Form.Group>
                                 <Form.Label>Your Email</Form.Label>
-                                <Form.Control type="email" placeholder="Enter Your Email" />
+                                <Form.Control id='email' type="email" placeholder="Enter Your Email" />
                             </Form.Group> <br />
                             <Form.Group>
                                 <Form.Label>Message</Form.Label>
-                                <Form.Control as='textarea' rows={3} placeholder="Your Message" />
+                                <Form.Control id='message' as='textarea' rows={3} placeholder="Your Message" />
                             </Form.Group> <br />
 
-                            <Button variant="primary" type="submit">
-                                Submit
+                            <Button variant="primary" type="submit" onClick={ContactSend}>
+                                Send
                             </Button>
                         </Form>
 
