@@ -38,7 +38,7 @@ const AllCourses = () => {
     return (
         <Fragment>
             <Container className='text-center'>
-                <h1 className='serviceMainTitle'>RECENT PROJECTS</h1>
+                <h1 className='serviceMainTitle'>RECENT COURSES</h1>
                 <div className='bottom'></div>
                 <Row>
                     {MyView}
