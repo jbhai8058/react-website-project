@@ -29,7 +29,7 @@ const ContactSec = () => {
 
         let jsonObject = {name:name,email:email,message:message}
 
-        RestClient.PostRequest(AppUrl.ContactSend.JSON.stringify(jsonObject)).then((result=>{
+        RestClient.PostRequest(AppUrl.ContactSend , JSON.stringify(jsonObject)).then((result=>{
             alert(result)
         })).catch((error)=>{
             console.log(error);
