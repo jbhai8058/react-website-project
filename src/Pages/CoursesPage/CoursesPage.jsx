@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import TopNavigation from '../../Components/TopNavigation/TopNavigation'
 import PageTop from '../../Components/PageTop/PageTop'
-import Courses from '../../Components/Courses/Course';
 import Footer from '../../Components/Footer/Footer';
+import AllCourses from '../../Components/AllCourses/AllCourses';
 
 const CoursesPage = () => {
 
@@ -11,7 +11,7 @@ const CoursesPage = () => {
     <Fragment>
       <TopNavigation title="All Course" />
       <PageTop pagetitle="All Course" />
-      <Courses />
+      <AllCourses />
       <Footer />
     </Fragment>
   )
