@@ -32,7 +32,7 @@ const AppRouter = () => {
                     <Route  path='/terms' element={<TermPage />} />
                     <Route  path='/privacy' element={<PrivacyPage />} />
                     <Route  path='/projectDetails/:projectID/:projectName' element={<ProjectDetailPage />} />
-                    <Route  path='/coursedetail' element={<CourseDetailPage />} />
+                    <Route  path='/coursedetail/:courseID' element={<CourseDetailPage />} />
                 </Routes>
             </Fragment>
         </Router>

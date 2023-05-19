@@ -5,17 +5,37 @@ import { Button, Col, Container, Row } from 'react-bootstrap'
 // import { BigPlayButton, Player } from 'video-react'
 // import 'video-react/dist/video-react.css';
 
-const CourseDetail = () => {
+const CourseDetail = (props) => {
+
+    let LongTitle ="";
+    let LongDescription ="";
+    let TotalDuration ="";
+    let TotalLecture ="";
+    let TotalStudent ="";
+    let SkillAll ="";
+    let VideoUrl ="";
+    let SmallImg ="";
+
+    let ConurseDetailsArray = props.courseallData;
+    if(ConurseDetailsArray.length === 1){
+         LongTitle = ConurseDetailsArray[0]['long_title'];
+         LongDescription = ConurseDetailsArray[0]['long_description'];
+         TotalDuration = ConurseDetailsArray[0]['total_duration'];
+         TotalLecture = ConurseDetailsArray[0]['total_lecture'];
+         TotalStudent = ConurseDetailsArray[0]['total_student'];
+         SkillAll = ConurseDetailsArray[0]['skill_all'];
+         VideoUrl = ConurseDetailsArray[0]['video_url'];
+         SmallImg = ConurseDetailsArray[0]['small_img'];
+    }
+
     return (
         <Fragment>
             <Container className='mt-5'>
                 <Row>
                     <Col lg={8} md={6} sm={12}>
-                        <h1 className='CourseDetailText'>Lorem ipsum dolor sit amet adipisicing elit</h1>
-                        <img className='CourseDetailImg' src='http://solverwp.com/demo/html/edumint/assets/img/course/9.png' /><br /><br />
-                        <p className='CourseallDescription'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga corporis alias, quas porro aspernatur eius saepe sed rem sint quis vero tempore quasi debitis eveniet animi, at corrupti, non laudantium? <br /><br />
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam consectetur impedit fugit in magni iusto quaerat, quae, illo fugiat labore nihil nobis atque voluptatum rem animi minus porro nemo sed? <br /><br />
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, cum recusandae velit odio ea eos beatae fugit doloribus animi totam esse tempora deserunt provident, dolor facilis, consectetur ratione illum omnis.
+                        <h1 className='CourseDetailText'>{LongTitle}</h1>
+                        <img className='CourseDetailImg' src={SmallImg} /><br /><br />
+                        <p className='CourseallDescription'>{LongDescription}
                         </p>
                     </Col>
                     <Col lg={4} md={6} sm={12}>
@@ -23,9 +43,9 @@ const CourseDetail = () => {
                             <h4 className='widget_title text-center'>Course Features</h4>
                             <hr />
                             <ul>
-                                <li><FontAwesomeIcon icon={faUser} /> <span>Enrolled :</span> 1200 students</li>
-                                <li><FontAwesomeIcon icon={faClock} /> <span>Duration :</span> 2 hours</li>
-                                <li><FontAwesomeIcon icon={faClipboard} /> <span>Lectures :</span> 8</li>
+                                <li><FontAwesomeIcon icon={faUser} /> <span>Enrolled :</span> {TotalStudent} students</li>
+                                <li><FontAwesomeIcon icon={faClock} /> <span>Duration :</span> {TotalDuration} hours</li>
+                                <li><FontAwesomeIcon icon={faClipboard} /> <span>Lectures :</span> {TotalLecture}</li>
                                 <li><FontAwesomeIcon icon={faClone} /> <span>Categories :</span> Technology</li>
                                 <li><FontAwesomeIcon icon={faTags} /> <span>Tags :</span> Andriod , JavaScript</li>
                                 <li><FontAwesomeIcon icon={faClone} /> <span>Instructor :</span> Junaid</li>

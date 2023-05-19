@@ -14,7 +14,7 @@ class AppUrl {
 
     static CourseHome       = this.BaseURL + '/coursehome'    ;
     static CourseAll        = this.BaseURL + '/courseall'     ;
-    static CourseDetails    = this.BaseURL + '/coursedetails' ;
+    static CourseDetails    = this.BaseURL + '/coursedetails/' ;
     static Information      = this.BaseURL + '/information'   ;
     static FooterData       = this.BaseURL + '/footerdata'    ;
 
