@@ -28,7 +28,7 @@ const AllProjects = () => {
                     <Card.Text className='serviceDescription'>
                         {myItem.project_description}
                     </Card.Text>
-                    <Button variant="primary"> <Link className='link-style' to='/projectDetails'>View More</Link> </Button>
+                    <Button variant="primary"> <Link className='link-style' to={'/projectDetails/'+ myItem.id}>View More</Link> </Button>
                 </Card.Body>
             </Card>
         </Col>
