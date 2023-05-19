@@ -9,12 +9,13 @@ import { useParams } from 'react-router-dom';
 const ProjectDetailPage = () => {
 
     const { ProjectPassedID } = useParams();
+    const { projectName } = useParams();
 
     return (
 
         <Fragment>
             <TopNavigation title="Project Details" />
-            <PageTop pagetitle="Project Details" />
+            <PageTop pagetitle={projectName} />
             <ProjectDetails id={ProjectPassedID} />
             <Footer />
         </Fragment>
