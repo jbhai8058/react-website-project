@@ -37,7 +37,7 @@ const ProjectDetails = (props) => {
             <Row>
                 <Col lg={6} md={6} sm={12}>
                     <div className='about-thumb-wrap after-shape'>
-                        <img src={imgtwo} alt={projectname} />
+                        <img className='project_img' src={imgtwo} alt={projectname} />
                     </div>
                 </Col>
                 <Col lg={6} md={6} sm={12} className='mt-5'>

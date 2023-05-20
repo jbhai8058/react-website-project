@@ -212,6 +212,7 @@
 
  .courseImg{
     width: 100%;
+    height: 200px;
 }
 .courseViewMore{
     color: #051b35;
@@ -638,4 +639,10 @@ a.snapchat:hover{
     font-weight: 700;
     color: #051b35;
     font-size: 16px;
+}
+
+.project_img{
+    width: 100%;
+    height: 100%;
+    border-radius:3%;
 }

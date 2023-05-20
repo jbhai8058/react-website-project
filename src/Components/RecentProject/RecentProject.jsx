@@ -21,7 +21,7 @@ const RecentProject = () => {
     const MyView = Data ? (Data.map(myItem => (
         <Col lg={4} md={6} sm={12} key={myItem.id}>
             <Card className='ProjectCard'>
-                <Card.Img variant="top" src={myItem.img_one} />
+                <Card.Img variant="top" className="courseImg" src={myItem.img_one} />
                 <Card.Body>
                     <Card.Title className='serviceName'>{myItem.project_name}</Card.Title>
                     <Card.Text className='serviceDescription'>
