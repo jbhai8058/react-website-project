@@ -10,22 +10,23 @@ import { useParams } from 'react-router-dom';
 
 const CourseDetailPage = () => {
 
-    const { CourseId } = useParams();
+    const { courseID } = useParams();
+    const { courseName } = useParams();
 
     const [coursedata , setcoursedata] = useState([]);
 
     useEffect(()=>{
-        RestClient.GetRequest(AppUrl.CourseDetails + CourseId).then((result)=>{
+        RestClient.GetRequest(AppUrl.CourseDetails + courseID).then((result)=>{
             setcoursedata(result);
         }).catch((error)=>{
             console.log(error);
         })
-    }, [CourseId])
+    }, [courseID])
 
     return (
         <Fragment>
             <TopNavigation title="Course Details" />
-            <PageTop pagetitle="Course Details" />
+            <PageTop pagetitle={courseName} />
             <CourseDetail courseallData={coursedata} />
             <Footer />
         </Fragment>
