@@ -55,7 +55,7 @@ const AllCourses = () => {
             </Fragment>
         )
 
-    }
+    } // end if condition
 }
 
 export default AllCourses

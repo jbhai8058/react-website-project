@@ -53,7 +53,7 @@ const AllProjects = () => {
                 </Container>
             </Fragment>
         )
-    }
+    }  // end if condition
 }
 
 export default AllProjects

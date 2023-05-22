@@ -8,18 +8,22 @@ import { useState } from 'react';
 import RestClient from '../../Rest Api/RestClient';
 import AppUrl from '../../Rest Api/AppUrl';
 import { useEffect } from 'react';
+import Loading from '../Loading/Loading';
 
 const ClientReview = () => {
 
     const [Data, setData] = useState([]);
 
+    const [loading, setloading] = useState(true)
+
     useEffect(() => {
         RestClient.GetRequest(AppUrl.ClientReview).then((result) => {
             setData(result);
+            setloading(false)
         }).catch((error) => {
             console.log(error);
         })
-    },[])
+    }, [])
 
     var settings = {
         autoPlay: true,
@@ -61,32 +65,37 @@ const ClientReview = () => {
         ]
     };
 
-
-    const MyView = Data ? (Data.map(myItem => (
-        <div key={myItem.id}>
-            <Row className='text-center justify-content-center'>
-                <Col lg={6} md={6} sm={12}>
-                    <img className='circleImg' src={myItem.client_img} alt={myItem.client_title} />
-                    <h2 className='reviewName'>{myItem.client_title}</h2>
-                    <p className='reviewDescription'>{myItem.client_description}</p>
-                </Col>
-            </Row>
-        </div>
-    ))
-    ) : null;
+    if (loading === true) {
+        return <Loading />
+    } else {
 
 
-    return (
-        <Fragment>
-            <Container fluid={true} className='siderBack text-center'>
-                <h1 className='reviewMainTitle p-3'>TESTIMOIAL</h1>
-                <div className='reviewbottom'></div>
-                <Slider {...settings}>
-                    {MyView}
-                </Slider>
-            </Container>
-        </Fragment>
-    )
+        const MyView = Data ? (Data.map(myItem => (
+            <div key={myItem.id}>
+                <Row className='text-center justify-content-center'>
+                    <Col lg={6} md={6} sm={12}>
+                        <img className='circleImg' src={myItem.client_img} alt={myItem.client_title} />
+                        <h2 className='reviewName'>{myItem.client_title}</h2>
+                        <p className='reviewDescription'>{myItem.client_description}</p>
+                    </Col>
+                </Row>
+            </div>
+        ))
+        ) : null;
+
+
+        return (
+            <Fragment>
+                <Container fluid={true} className='siderBack text-center'>
+                    <h1 className='reviewMainTitle p-3'>TESTIMOIAL</h1>
+                    <div className='reviewbottom'></div>
+                    <Slider {...settings}>
+                        {MyView}
+                    </Slider>
+                </Container>
+            </Fragment>
+        )
+    } // end if condition
 }
 
 export default ClientReview
