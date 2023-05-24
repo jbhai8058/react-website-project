@@ -6,16 +6,23 @@ import RestClient from '../../Rest Api/RestClient';
 import AppUrl from '../../Rest Api/AppUrl';
 import HTMLReactParser from 'html-react-parser';
 import Loading from '../Loading/Loading';
+import WentWrong from '../WentWrong/WentWrong'
 
 const AboutDescription = () => {
 
     const [aboutdesc, setaboutdesc] = useState('');
-    const [loading, setloading] = useState(true)
+    const [loading, setloading] = useState(true);
+    const [error, seterror] = useState(false)
 
     useEffect(() => {
         RestClient.GetRequest(AppUrl.Information).then((result) => {
-            setaboutdesc(result[0]['about']);
-            setloading(false)
+
+            if (result === null) {
+                seterror(true)
+            } else {
+                setaboutdesc(result[0]['about']);
+                setloading(false)
+            }
         }).catch((error) => {
             console.log(error);
         })
@@ -23,8 +30,9 @@ const AboutDescription = () => {
 
     if (loading === true) {
         return <Loading />
+    } else if (error === true) {
+        return <WentWrong />
     } else {
-
         return (
             <Fragment>
                 <Container className='mt-5'>
