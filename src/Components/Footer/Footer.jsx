@@ -12,21 +12,24 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import RestClient from '../../Rest Api/RestClient';
 import AppUrl from '../../Rest Api/AppUrl';
+import Loading from '../Loading/Loading';
 
 const Footer = () => {
 
-    const[address , setaddress]= useState('');
-    const[phone , setphone]= useState('');
-    const[email , setemail]= useState('');
-    const[facebook , setfacebook]= useState('');
-    const[youtube , setyoutube]= useState('');
-    const[instagram , setinstagram]= useState('');
-    const[twitter , settwitter]= useState('');
-    const[snapchat , setsnapchat]= useState('');
-    const[footercredit , setfootercredit]= useState('');
+    const [address, setaddress] = useState('');
+    const [phone, setphone] = useState('');
+    const [email, setemail] = useState('');
+    const [facebook, setfacebook] = useState('');
+    const [youtube, setyoutube] = useState('');
+    const [instagram, setinstagram] = useState('');
+    const [twitter, settwitter] = useState('');
+    const [snapchat, setsnapchat] = useState('');
+    const [footercredit, setfootercredit] = useState('');
+    const [loadingclass, setloadingclass] = useState('p-5 text-justify');
+    const [maindivclass, setmaindivclass] = useState('d-none');
 
-    useEffect(()=>{
-        RestClient.GetRequest(AppUrl.FooterData).then((response)=>{
+    useEffect(() => {
+        RestClient.GetRequest(AppUrl.FooterData).then((response) => {
             setaddress(response[0]['address']);
             setphone(response[0]['phone']);
             setemail(response[0]['email']);
@@ -36,8 +39,10 @@ const Footer = () => {
             settwitter(response[0]['twitter']);
             setsnapchat(response[0]['snapchat']);
             setfootercredit(response[0]['footer_credit']);
+            setloadingclass('d-none');
+            setmaindivclass('p-5 text-justify')
         })
-    },[])
+    }, [])
 
     return (
         <Fragment>
@@ -63,7 +68,12 @@ const Footer = () => {
                             </a>
                         </div>
                     </Col>
-                    <Col lg={3} md={6} sm={12} className='p-5 text-justify'>
+
+                    <Col className={loadingclass}>
+                        <Loading />
+                    </Col>
+
+                    <Col lg={3} md={6} sm={12} className={maindivclass}>
                         <h2 className='footerName'>Address</h2>
                         <p className='FooterDescription'>
                             {address}<br />
@@ -87,7 +97,7 @@ const Footer = () => {
             </Container>
             <Container fluid={true} className='text-center copyrightSection'>
                 <a className='copyrightLink' href="#">{footercredit}</a>
-            </Container> 
+            </Container>
         </Fragment>
     )
 }
