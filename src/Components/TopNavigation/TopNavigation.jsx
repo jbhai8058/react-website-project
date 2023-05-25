@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { Fragment } from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import '../../assets/css/custom.css';
+import '../../assets/css/responsive.css';
 import {
     NavLink
 } from "react-router-dom";

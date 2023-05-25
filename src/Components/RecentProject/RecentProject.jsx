@@ -47,7 +47,7 @@ const RecentProject = () => {
 
         return (
             <Fragment>
-                <Container className='text-center mt-5 p-5'>
+                <Container className='text-center mt-5'>
                     <LightSpeed top>
                         <h1 className='serviceMainTitle'>RECENT PROJECTS</h1>
                         <div className='bottom'></div>
