@@ -16,6 +16,7 @@ import TermPage from '../../Pages/TermPage/TermPage';
 import PrivacyPage from '../../Pages/PrivacyPage/PrivacyPage';
 import ProjectDetailPage from '../../Pages/ProjectDetailPage/ProjectDetailPage';
 import CourseDetailPage from '../../Pages/CourseDetailPage/CourseDetailPage';
+import NotFoundPage from '../../Pages/NotFoundPage/NotFoundPage';
 
 const AppRouter = () => {
     return (
@@ -33,6 +34,7 @@ const AppRouter = () => {
                     <Route  path='/privacy' element={<PrivacyPage />} />
                     <Route  path='/projectDetails/:projectID/:projectName' element={<ProjectDetailPage />} />
                     <Route  path='/coursedetails/:courseID/:courseName' element={<CourseDetailPage />} />
+                    <Route exact  path='404'  element={<NotFoundPage />} />
                 </Routes>
             </Fragment>
         </Router>

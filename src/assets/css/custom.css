@@ -656,3 +656,10 @@ a.snapchat:hover{
     width: 180px;
     height: 180px;
 }
+
+.notfound{
+    color: #051b35;
+    font-family: 'Monserrat',sans-serif;
+    font-weight: 700;
+    font-size:50px ;
+}

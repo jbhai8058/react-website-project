@@ -3,8 +3,9 @@
 
     .topTitle{ font-size: 30px; }
     .topSubTitle{  font-size: 18px; }
-    .ProjectCard{ width: 26em; }
+    .ProjectCard{ width: 26em;margin-top: 50px; }
     .AboutMeImg{  width: 400px; height: 400px; }
+    .project-title{  margin-top: 200px; }
  }
 
 /* Small devices (landscape phones, 576px and up) */
