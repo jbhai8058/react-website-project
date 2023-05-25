@@ -6,6 +6,9 @@ import page3 from '../../assets/images/page3.png';
 import icon1 from '../../assets/images/icon1.png';
 import icon2 from '../../assets/images/icon2.png';
 import icon3 from '../../assets/images/icon3.png';
+import Jump from 'react-reveal/Jump';
+import Flip from 'react-reveal/Flip';
+import Slide from 'react-reveal/Slide';
 
 
 const Welcome = () => {
@@ -21,33 +24,47 @@ const Welcome = () => {
                                     {/* Header Start */}
 
                                     <h6 className='sub-title double-line'>WELCOME</h6>
-                                    <h2 className='maintitle'>
-                                        An examplary <br />
-                                        Learning Community
-                                    </h2>
+                                    <Jump>
+                                        <h2 className='maintitle'>
+                                            An examplary <br />
+                                            Learning Community
+                                        </h2>
+                                    </Jump>
 
                                     {/* Header End */}
 
-                                    
+
                                     <Container className='text-center mt-5'>
 
                                         {/* Center Content Start */}
 
                                         <Row>
                                             <Col lg={4} md={6} sm={12}>
-                                                <img src={page1} />
-                                                <h1 className='serviceName'>Amet consectetur</h1>
-                                                <p className='serviceDescription'>Lorem ipsum dolor</p>
+                                                <Slide top>
+                                                    <img src={page1} />
+                                                </Slide>
+                                                <Flip top>
+                                                    <h1 className='serviceName'>Amet consectetur</h1>
+                                                    <p className='serviceDescription'>Lorem ipsum dolor</p>
+                                                </Flip>
                                             </Col>
                                             <Col lg={4} md={6} sm={12}>
-                                                <img src={page2} />
-                                                <h1 className='serviceName'>Amet consectetur</h1>
-                                                <p className='serviceDescription'>Lorem ipsum dolor</p>
+                                                <Slide top>
+                                                    <img src={page2} />
+                                                </Slide>
+                                                <Flip top>
+                                                    <h1 className='serviceName'>Amet consectetur</h1>
+                                                    <p className='serviceDescription'>Lorem ipsum dolor</p>
+                                                </Flip>
                                             </Col>
                                             <Col lg={4} md={6} sm={12}>
-                                                <img src={page3} />
-                                                <h1 className='serviceName'>Amet consectetur</h1>
-                                                <p className='serviceDescription'>Lorem ipsum dolor</p>
+                                                <Slide top>
+                                                    <img src={page3} />
+                                                </Slide>
+                                                <Flip top>
+                                                    <h1 className='serviceName'>Amet consectetur</h1>
+                                                    <p className='serviceDescription'>Lorem ipsum dolor</p>
+                                                </Flip>
                                             </Col>
                                         </Row>
 

@@ -8,6 +8,8 @@ import RestClient from '../../Rest Api/RestClient'
 import AppUrl from '../../Rest Api/AppUrl'
 import { useState } from 'react'
 import Loading from '../Loading/Loading'
+import Zoom from 'react-reveal/Zoom';
+import LightSpeed from 'react-reveal/LightSpeed';
 
 const ContactSec = () => {
 
@@ -49,33 +51,36 @@ const ContactSec = () => {
                 <Container className='mt-5'>
                     <Row>
                         <Col lg={6} md={6} sm={12}>
-                            <h1>Quick Connect</h1>
-                            <Form>
-                                <Form.Group>
-                                    <Form.Label>Your Name</Form.Label>
-                                    <Form.Control id='name' type="text" placeholder="Enter Your Name" />
-                                </Form.Group> <br />
-                                <Form.Group>
-                                    <Form.Label>Your Email</Form.Label>
-                                    <Form.Control id='email' type="email" placeholder="Enter Your Email" />
-                                </Form.Group> <br />
-                                <Form.Group>
-                                    <Form.Label>Message</Form.Label>
-                                    <Form.Control id='message' as='textarea' rows={3} placeholder="Your Message" />
-                                </Form.Group> <br />
+                            <Zoom top>
+                                <h1>Quick Connect</h1>
+                                <Form>
+                                    <Form.Group>
+                                        <Form.Label>Your Name</Form.Label>
+                                        <Form.Control id='name' type="text" placeholder="Enter Your Name" />
+                                    </Form.Group> <br />
+                                    <Form.Group>
+                                        <Form.Label>Your Email</Form.Label>
+                                        <Form.Control id='email' type="email" placeholder="Enter Your Email" />
+                                    </Form.Group> <br />
+                                    <Form.Group>
+                                        <Form.Label>Message</Form.Label>
+                                        <Form.Control id='message' as='textarea' rows={3} placeholder="Your Message" />
+                                    </Form.Group> <br />
 
-                                <Button variant="primary" type="submit" onClick={ContactSend}>
-                                    Send
-                                </Button>
-                            </Form>
-
+                                    <Button variant="primary" type="submit" onClick={ContactSend}>
+                                        Send
+                                    </Button>
+                                </Form>
+                            </Zoom>
                         </Col>
                         <Col lg={6} md={6} sm={12}>
-                            <h1>Disscuss Now</h1>
-                            <p className='serviceDescription'>{address}<br />
-                                <FontAwesomeIcon icon={faEnvelope} /> Email : {email}<br />
-                                <FontAwesomeIcon icon={faPhone} /> Phone : {phone}<br />
-                            </p>
+                            <LightSpeed top>
+                                <h1>Disscuss Now</h1>
+                                <p className='serviceDescription'>{address}<br />
+                                    <FontAwesomeIcon icon={faEnvelope} /> Email : {email}<br />
+                                    <FontAwesomeIcon icon={faPhone} /> Phone : {phone}<br />
+                                </p>
+                            </LightSpeed>
                         </Col>
                     </Row>
                 </Container>

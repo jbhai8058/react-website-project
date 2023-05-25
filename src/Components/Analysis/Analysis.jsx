@@ -5,6 +5,8 @@ import AppUrl from '../../Rest Api/AppUrl';
 import RestClient from '../../Rest Api/RestClient';
 import HTMLReactParser from 'html-react-parser';
 import Loading from '../Loading/Loading';
+import LightSpeed from 'react-reveal/LightSpeed';
+import Zoom from 'react-reveal/Zoom';
 
 const Analysis = () => {
 
@@ -40,8 +42,10 @@ const Analysis = () => {
         return (
             <Fragment>
                 <Container className='text-center'>
-                    <h1 className='serviceMainTitle'>TECHNOLOGY USED</h1>
-                    <div className='bottom'></div>
+                    <LightSpeed top>
+                        <h1 className='serviceMainTitle'>TECHNOLOGY USED</h1>
+                        <div className='bottom'></div>
+                    </LightSpeed>
                     <Row>
                         <Col lg={6} md={12} sm={12}>
                             <ResponsiveContainer>
@@ -53,9 +57,11 @@ const Analysis = () => {
                             </ResponsiveContainer>
                         </Col>
                         <Col lg={6} md={12} sm={12}>
-                            <p className='text-justify serviceDescription'>
-                                {HTMLReactParser(techdes)}
-                            </p>
+                            <Zoom top>
+                                <p className='text-justify serviceDescription'>
+                                    {HTMLReactParser(techdes)}
+                                </p>
+                            </Zoom>
                         </Col>
                     </Row>
                 </Container>

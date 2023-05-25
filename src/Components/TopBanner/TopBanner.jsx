@@ -5,7 +5,8 @@ import RestClient from '../../Rest Api/RestClient';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import AppUrl from '../../Rest Api/AppUrl';
-import Loading from '../Loading/Loading'
+import Loading from '../Loading/Loading';
+import Fade from 'react-reveal/Fade';
 
 
 const TopBanner = () => {
@@ -38,8 +39,10 @@ const TopBanner = () => {
               </Col>
 
               <Col className={maindivclass}>
-                <h1 className='topTitle'>{title}</h1>
-                <h4 className='topSubTitle'>{subtitle}</h4>
+                <Fade top>
+                  <h1 className='topTitle'>{title}</h1>
+                  <h4 className='topSubTitle'>{subtitle}</h4>
+                </Fade>
                 <Button variant='success'>Learn More</Button>
               </Col>
             </Row>

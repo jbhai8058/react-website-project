@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import RestClient from '../../Rest Api/RestClient';
 import AppUrl from '../../Rest Api/AppUrl';
 import Loading from '../Loading/Loading';
+import LightSpeed from 'react-reveal/LightSpeed';
+import Zoom from 'react-reveal/Zoom';
 
 const RecentProject = () => {
 
@@ -27,16 +29,18 @@ const RecentProject = () => {
 
         const MyView = Data ? (Data.map(myItem => (
             <Col lg={4} md={6} sm={12} key={myItem.id}>
-                <Card className='ProjectCard'>
-                    <Card.Img variant="top" className="courseImg" src={myItem.img_one} />
-                    <Card.Body>
-                        <Card.Title className='serviceName'>{myItem.project_name}</Card.Title>
-                        <Card.Text className='serviceDescription'>
-                            {myItem.project_description}
-                        </Card.Text>
-                        <Button variant="primary"><Link className='link-style' to={'/projectDetails/' + myItem.id + '/' + myItem.project_name}>View More</Link> </Button>
-                    </Card.Body>
-                </Card>
+                <Zoom top>
+                    <Card className='ProjectCard'>
+                        <Card.Img variant="top" className="courseImg" src={myItem.img_one} />
+                        <Card.Body>
+                            <Card.Title className='serviceName'>{myItem.project_name}</Card.Title>
+                            <Card.Text className='serviceDescription'>
+                                {myItem.project_description}
+                            </Card.Text>
+                            <Button variant="primary"><Link className='link-style' to={'/projectDetails/' + myItem.id + '/' + myItem.project_name}>View More</Link> </Button>
+                        </Card.Body>
+                    </Card>
+                </Zoom>
             </Col>
         ))
         ) : null;
@@ -44,8 +48,10 @@ const RecentProject = () => {
         return (
             <Fragment>
                 <Container className='text-center mt-5 p-5'>
-                    <h1 className='serviceMainTitle'>RECENT PROJECTS</h1>
-                    <div className='bottom'></div>
+                    <LightSpeed top>
+                        <h1 className='serviceMainTitle'>RECENT PROJECTS</h1>
+                        <div className='bottom'></div>
+                    </LightSpeed>
                     <Row>
                         {MyView}
                     </Row>

@@ -4,6 +4,8 @@ import RestClient from '../../Rest Api/RestClient';
 import AppUrl from '../../Rest Api/AppUrl';
 import { useState } from 'react';
 import Loading from '../Loading/Loading';
+import Zoom from 'react-reveal/Zoom';
+import LightSpeed from 'react-reveal/LightSpeed';
 
 const Service = () => {
 
@@ -25,11 +27,13 @@ const Service = () => {
 
         const MyView = Data ? (Data.map(myItem => (
             <Col lg={4} md={6} sm={12} key={myItem.id}>
-                <div className="serviceCard text-center">
-                    <img className="ecommerceIcon" src={myItem.service_logo} alt={myItem.service_name} />
-                    <h2 className="serviceName">{myItem.service_name}</h2>
-                    <p className="serviceDescription">{myItem.service_description}</p>
-                </div>
+                <Zoom top>
+                    <div className="serviceCard text-center">
+                        <img className="ecommerceIcon" src={myItem.service_logo} alt={myItem.service_name} />
+                        <h2 className="serviceName">{myItem.service_name}</h2>
+                        <p className="serviceDescription">{myItem.service_description}</p>
+                    </div>
+                </Zoom>
             </Col>
         ))
         ) : null;
@@ -37,8 +41,10 @@ const Service = () => {
         return (
             <Fragment>
                 <Container className='text-center'>
-                    <h1 className='serviceMainTitle'>MY SERVICES</h1>
-                    <div className='bottom'></div>
+                    <LightSpeed top>
+                        <h1 className='serviceMainTitle'>MY SERVICES</h1>
+                        <div className='bottom'></div>
+                    </LightSpeed>
                     <Row>
                         {MyView}
                     </Row>

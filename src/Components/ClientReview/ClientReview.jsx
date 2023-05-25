@@ -9,6 +9,7 @@ import RestClient from '../../Rest Api/RestClient';
 import AppUrl from '../../Rest Api/AppUrl';
 import { useEffect } from 'react';
 import Loading from '../Loading/Loading';
+import Zoom from 'react-reveal/Zoom';
 
 const ClientReview = () => {
 
@@ -74,9 +75,11 @@ const ClientReview = () => {
             <div key={myItem.id}>
                 <Row className='text-center justify-content-center'>
                     <Col lg={6} md={6} sm={12}>
-                        <img className='circleImg' src={myItem.client_img} alt={myItem.client_title} />
-                        <h2 className='reviewName'>{myItem.client_title}</h2>
-                        <p className='reviewDescription'>{myItem.client_description}</p>
+                        <Zoom top>
+                            <img className='circleImg' src={myItem.client_img} alt={myItem.client_title} />
+                            <h2 className='reviewName'>{myItem.client_title}</h2>
+                            <p className='reviewDescription'>{myItem.client_description}</p>
+                        </Zoom>
                     </Col>
                 </Row>
             </div>

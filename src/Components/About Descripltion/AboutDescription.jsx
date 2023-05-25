@@ -7,6 +7,7 @@ import AppUrl from '../../Rest Api/AppUrl';
 import HTMLReactParser from 'html-react-parser';
 import Loading from '../Loading/Loading';
 import WentWrong from '../WentWrong/WentWrong'
+import Zoom from 'react-reveal/Zoom';
 
 const AboutDescription = () => {
 
@@ -38,7 +39,9 @@ const AboutDescription = () => {
                 <Container className='mt-5'>
                     <Row>
                         <Col lg={12} md={12} sm={12}>
-                            {HTMLReactParser(aboutdesc)}
+                            <Zoom top>
+                                {HTMLReactParser(aboutdesc)}
+                            </Zoom>
                         </Col>
                     </Row>
                 </Container>

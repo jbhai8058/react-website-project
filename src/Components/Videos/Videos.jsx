@@ -10,6 +10,8 @@ import RestClient from '../../Rest Api/RestClient';
 import AppUrl from '../../Rest Api/AppUrl';
 import HTMLReactParser from 'html-react-parser';
 import Loading from '../Loading/Loading';
+import Zoom from 'react-reveal/Zoom';
+import LightSpeed from 'react-reveal/LightSpeed';
 
 const Videos = () => {
 
@@ -40,11 +42,15 @@ const Videos = () => {
         return (
             <Fragment>
                 <Container className='text-center'>
-                    <h1 className='serviceMainTitle'>OUR VIDEOS</h1>
-                    <div className='bottom'></div>
+                    <LightSpeed top>
+                        <h1 className='serviceMainTitle'>OUR VIDEOS</h1>
+                        <div className='bottom'></div>
+                    </LightSpeed>
                     <Row>
                         <Col lg={6} md={6} sm={12}>
-                            {HTMLReactParser(videodescription)}
+                            <Zoom top>
+                                {HTMLReactParser(videodescription)}
+                            </Zoom>
                         </Col>
 
                         <Col lg={6} md={6} sm={12} className='VideoCard'>
