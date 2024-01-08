@@ -1,6 +1,7 @@
 class AppUrl {
 
-    static BaseURL = 'http://localhost/react_website_project_api/public/api';
+    // static BaseURL = 'http://localhost/react_website_project_api/public/api';
+    static BaseURL = 'https://websiteapi.rf.gd/api';
 
     static HomeTopTitle     = this.BaseURL + '/homepage/title';
     static HomeTechDesc     = this.BaseURL + '/techhome'      ;
