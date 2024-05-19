@@ -26,8 +26,8 @@ const Welcome = () => {
                                     <h6 className='sub-title double-line'>WELCOME</h6>
                                     <Jump>
                                         <h2 className='maintitle'>
-                                            An examplary <br />
-                                            Learning Community
+                                            To Our <br />
+                                            Web Development Studio
                                         </h2>
                                     </Jump>
 
@@ -44,8 +44,8 @@ const Welcome = () => {
                                                     <img src={page1} />
                                                 </Slide>
                                                 <Flip top>
-                                                    <h1 className='serviceName'>Amet consectetur</h1>
-                                                    <p className='serviceDescription'>Lorem ipsum dolor</p>
+                                                    <h1 className='serviceName'>Responsive Websites</h1>
+                                                    <p className='serviceDescription'>Crafting websites that work seamlessly across devices.</p>
                                                 </Flip>
                                             </Col>
                                             <Col lg={4} md={6} sm={12}>
@@ -53,8 +53,8 @@ const Welcome = () => {
                                                     <img src={page2} />
                                                 </Slide>
                                                 <Flip top>
-                                                    <h1 className='serviceName'>Amet consectetur</h1>
-                                                    <p className='serviceDescription'>Lorem ipsum dolor</p>
+                                                    <h1 className='serviceName'>Custom Web Solutions</h1>
+                                                    <p className='serviceDescription'>Tailored solutions to meet your unique business needs.</p>
                                                 </Flip>
                                             </Col>
                                             <Col lg={4} md={6} sm={12}>
@@ -62,8 +62,8 @@ const Welcome = () => {
                                                     <img src={page3} />
                                                 </Slide>
                                                 <Flip top>
-                                                    <h1 className='serviceName'>Amet consectetur</h1>
-                                                    <p className='serviceDescription'>Lorem ipsum dolor</p>
+                                                    <h1 className='serviceName'>E-commerce Platforms</h1>
+                                                    <p className='serviceDescription'>Building robust e-commerce platforms for online businesses.</p>
                                                 </Flip>
                                             </Col>
                                         </Row>
@@ -79,8 +79,8 @@ const Welcome = () => {
                                                         <img className='sideImg' src={icon1} />
                                                     </Col>
                                                     <Col lg={6} md={6} sm={12}>
-                                                        <h5 className='text-justify homeIntro'>Development</h5>
-                                                        <p className='text-justify serviceDescription'>Lorem ipsum dolor</p>
+                                                        <h5 className='text-justify homeIntro'>Web Development</h5>
+                                                        <p className='text-justify serviceDescription'>Bringing your ideas to life with clean, efficient code.</p>
                                                     </Col>
                                                 </Row>
                                             </Col>
@@ -91,7 +91,7 @@ const Welcome = () => {
                                                     </Col>
                                                     <Col lg={6} md={6} sm={12}>
                                                         <h5 className='text-justify homeIntro'>Web Design</h5>
-                                                        <p className='text-justify serviceDescription'>Lorem ipsum dolor</p>
+                                                        <p className='text-justify serviceDescription'>Creating visually stunning designs.</p>
                                                     </Col>
                                                 </Row>
                                             </Col>
@@ -101,8 +101,8 @@ const Welcome = () => {
                                                         <img className='sideImg' src={icon3} />
                                                     </Col>
                                                     <Col lg={6} md={6} sm={12}>
-                                                        <h5 className='text-justify homeIntro'>Ecommerce</h5>
-                                                        <p className='text-justify serviceDescription'>Lorem ipsum dolor</p>
+                                                        <h5 className='text-justify homeIntro'>E-commerce Solutions</h5>
+                                                        <p className='text-justify serviceDescription'>Empowering your online business with secure.</p>
                                                     </Col>
                                                 </Row>
                                             </Col>

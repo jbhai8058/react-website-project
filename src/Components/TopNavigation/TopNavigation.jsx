@@ -41,7 +41,7 @@ const TopNavigation = (props) => {
             <title>{props.title}</title>
             <Navbar collapseOnSelect fixed='top' expand="lg" variant={navVarient} className={navBarBack}>
                 <Container>
-                <NavLink to='/'><Navbar.Brand className={navBarTitle} >EASY STANDING</Navbar.Brand></NavLink>
+                <NavLink to='/'><Navbar.Brand className={navBarTitle} >Code & Creativity Hub</Navbar.Brand></NavLink>
                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
@@ -50,8 +50,8 @@ const TopNavigation = (props) => {
                         <Nav.Link> <NavLink className={navBarItem} to='/'>Home</NavLink> </Nav.Link>
                         <Nav.Link> <NavLink className={navBarItem} to='/about'>About</NavLink> </Nav.Link>
                         <Nav.Link> <NavLink className={navBarItem} to='/service'>Services</NavLink> </Nav.Link>
-                        <Nav.Link> <NavLink className={navBarItem} to='/course'>Courses</NavLink>  </Nav.Link>
-                        <Nav.Link> <NavLink className={navBarItem} to='/portfoilo'>Portfoilo</NavLink> </Nav.Link>
+                        {/* <Nav.Link> <NavLink className={navBarItem} to='/course'>Courses</NavLink>  </Nav.Link>
+                        <Nav.Link> <NavLink className={navBarItem} to='/portfoilo'>Portfoilo</NavLink> </Nav.Link> */}
                         <Nav.Link> <NavLink className={navBarItem} to='/contact'>Contact Us</NavLink> </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

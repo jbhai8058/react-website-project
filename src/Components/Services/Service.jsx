@@ -29,7 +29,7 @@ const Service = () => {
             <Col lg={4} md={6} sm={12} key={myItem.id}>
                 <Zoom top>
                     <div className="serviceCard text-center">
-                        <img className="ecommerceIcon" src={myItem.service_logo} alt={myItem.service_name} />
+                        <img className="ecommerceIcon" src={'https://backend.securesoftwarehub.com/upload/service/' + myItem.service_logo} alt={myItem.service_name} />
                         <h2 className="serviceName">{myItem.service_name}</h2>
                         <p className="serviceDescription">{myItem.service_description}</p>
                     </div>

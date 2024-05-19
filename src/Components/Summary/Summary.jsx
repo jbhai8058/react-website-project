@@ -76,8 +76,8 @@ const Summary = () => {
                                     <Card.Body>
                                         <Card.Title className='cardTitle'>What I Have Achieved?</Card.Title>
                                         <Card.Text className='cardSubTitle text-justify'>
-                                            <FontAwesomeIcon icon={faSquareCheck} />  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta beatae repellat voluptatem laborum modi magnam nam consequatur. <br /> <br />
-                                            <FontAwesomeIcon icon={faSquareCheck} /> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat quas veniam, temporibus voluptates et rerum, consequatur ratione mollitia.
+                                            <FontAwesomeIcon icon={faSquareCheck} />  Mastered diverse web technologies: HTML, CSS, JavaScript, jQuery, PHP, Laravel. <br /> <br />
+                                            <FontAwesomeIcon icon={faSquareCheck} /> Beyond coding, honed problem-solving, embraced evolving web landscape.
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>

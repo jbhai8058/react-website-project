@@ -17,16 +17,16 @@ const HomePage = () => {
 
     return (
         <Fragment>
-            <TopNavigation title="Easy Standing" />
+            <TopNavigation title="Code & Creativity Hub" />
             <TopBanner />
             <Welcome />
             <Service />
             <Analysis />
             <Summary />
-            <RecentProject />
-            <Course />
-            <Videos />
-            <ClientReview />
+            {/* <RecentProject /> */}
+            {/* <Course /> */}
+            {/* <Videos /> */}
+            {/* <ClientReview /> */}
             <AboutMe />
             <Footer />
         </Fragment>
